@@ -1,0 +1,16 @@
+.main .worldMap{
+	height: 600px;
+	padding: 5px 10px;
+	background-color: #F8F9FA;
+}
+
+
+.main .worldMap .tips{
+	margin:8px 0;
+	font-size: 6px;
+	text-align: center;
+	color: #666;
+}
+.main .worldMap #worldEcharts{
+	height: 500px;
+}

@@ -1,0 +1,12 @@
+body{
+	background-color: #00b1b7;
+	width: "100%";
+	height: "100%";
+}
+.main{
+	width: 720px;
+	padding-bottom: 8px;
+	margin:8px auto;
+	background-color: #fff;
+	border-radius: 5px;
+}

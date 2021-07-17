@@ -1,0 +1,22 @@
+.main header ul{
+	display: flex;
+	border-bottom: 2px solid #F5F6F7;
+}
+
+.main header ul li{
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	height: 30px;
+}
+
+.main header ul li a{
+	display: flex;
+	align-items: center;
+	color: #000;
+}
+
+.main header ul li a.active{
+	color: #00B1B7;
+	border-bottom:4px  solid #10aeb5;
+}

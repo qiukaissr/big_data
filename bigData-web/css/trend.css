@@ -1,0 +1,20 @@
+.main .trend{
+	width: 98.9%;
+	border:0.5px solid #ccc;
+	margin: 8px 4px 0;
+	border-radius: 5px;
+	box-sizing: border-box;
+	padding: 0 4px;
+}
+
+.main .trend .title{
+	font-size: 14px;
+	color: #555;
+	font-weight: 700;
+	margin: 4px 0;
+}
+
+.main .trend #tendency{
+	height: 400px;
+	margin-bottom: 5px;
+}

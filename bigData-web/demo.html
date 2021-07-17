@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- 测试页面 -->
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!-- 引入 ECharts 文件 -->
+		<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0-beta.2/echarts.min.js"></script>
+		<script type="text/javascript" src="//cdn.bootcss.com/zui/1.9.2/lib/jquery/jquery.js"></script>
+		<!--引入中国的地图数据js文件，引入后会自动注册地图名字和数据-->		
+		<script type="text/javascript" src="js/dbData.js"></script>
+		<script type="text/javascript" src="js/china.js"></script>
+		<!-- <script type="text/javascript" src="js/getData.js"></script> -->
+		
+		<link rel="stylesheet" type="text/css" href="css/tabar.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/header.css"/>
+		<link rel="stylesheet" type="text/css" href="css/details.css"/>
+		<link rel="stylesheet" type="text/css" href="css/chinaMap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/trend.css"/>
+		<link rel="stylesheet" type="text/css" href="css/chinaTrend.css"/>
+		 
+		<title>新型冠状病毒实时地图</title>
+	</head>
+	<body>
+		<img src="img/tabImage.png" style="width: 100%;height: 180px;"/>
+		<div class="main">
+			<!-- 头部标题 -->
+			<header>
+				<ul>
+					<li>
+						<a class="active" href="javascript:;">国内疫情</a>
+					</li>
+					<li>
+						<a href="javascript:;">国外疫情</a>
+					</li>
+					<li>
+						<a href="javascript:;">实时播报</a>
+					</li>
+				</ul>
+			</header>
+			
+			<!-- 国内疫情 -->
+			<div class="details">
+				<h3 class="title">国内疫情</h3>
+				<h4 class="time">
+					数据更新至:<span></span>
+					<a style="padding-left: 600px;">
+						<img src="img/tips.png" style="width: 15px;"/>
+						<em>数据说明<em>
+					</a>
+				</h4>
+				<ul class="info"></ul>
+			</div>
+			
+			<!-- 疫情速报-->
+			
+			
+			<!-- 疫情地图 -->
+			<div class="chinaMap">
+				<nav>
+					<a href="javascript:;" class="chinaTap isActive">现有确诊</a>
+					<a href="javascript:;" class="chinaTap ">累计确诊</a>
+				</nav>
+				<div class="tips">
+					现有确诊病例数，排除治愈、死亡
+				</div>
+				<div id="mapEcharts"></div>
+			</div>
+			
+			<!-- 境外输入新增趋势 -->
+			<div class="trendBox">
+			    
+				<div class="trendBottom">
+				    <div class="trendLeft trendActive">
+				        <span>境外输入</span>
+				        <span>新增趋势</span>
+				    </div>
+				    <div class="trendLeft">
+				        <span>境外输入</span>
+				        <span>累计趋势</span>
+				    </div>
+				    <div class="trendLeft">
+				        <span>境外输入</span>
+				        <span>省级TOP10</span>
+				    </div>
+				</div>
+				
+			    <!-- 境外输入新增趋势 -->
+			    <div class="trend">
+			    	<div class="title">境外输入新增趋势</div>
+						<div id="tendency" style="width: 720px;height: 400px;"></div>
+			    </div>
+			</div>
+			
+			
+			<!-- 全国 总新增确诊/新增境外输入确诊 趋势 -->
+			<div class="chinaTrend">
+				<div class="title">全国 总新增确诊/新增境外输入确诊 趋势</div>
+				<div id="chinaTendency"></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				getdbData(); 
+				 var myChart = echarts.init(document.getElementById('tendency1'));
+
+				// 指定图表的配置项和数据
+				var option={
+							xAxis: {
+								type: 'category',
+								data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+							},
+							yAxis: {
+								type: 'value'
+							},
+							series: [{
+								data: [150, 230, 224, 218, 135, 147, 260],
+								type: 'line'
+							}]
+						};
+					myChart.setOption(option);	
+				$(".trendBottom .trendLeft").click(function(){
+					$(this).addClass("trendActive");
+					$(this).siblings().removeClass("trendActive");
+					var index=$(this).index();
+					if(index == 0){
+						option.series[0].data = [150, 230, 224, 218, 135, 147, 260];
+						myChart.setOption(option);
+					}
+					if(index == 1){
+						option.series[0].data = [15, 23, 24, 21, 15, 17, 20];
+						myChart.setOption(option);
+					}
+					if(index == 2){
+						option.series[0].data = [50, 20, 24, 28, 35, 17, 60];
+						myChart.setOption(option);
+					}
+				});
+				
+			});
+		</script>
+	</body>
+</html>
+

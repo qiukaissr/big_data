@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigdata.bigdataserver.dao.ChinaDayListDao">
+    <insert id="insert" parameterType="com.bigdata.bigdataserver.vo.ChinaDayList">
+        insert into chinadaylist (date, today_confirm, today_suspect, today_heal, today_dead, today_severe, today_storeConfirm, today_input,
+                                total_confirm, total_suspect, total_heal, total_dead, total_severe, total_input, total_storeConfirm)
+        values (#{date}, #{todayConfirm}, #{todaySuspect}, #{todayHeal}, #{todayDead}, #{todaySevere}, #{todayStoreConfirm}, #{todayInput},
+                #{totalConfirm}, #{totalSuspect}, #{totalHeal}, #{totalDead}, #{totalSevere}, #{totalInput}, #{totalStoreConfirm})
+    </insert>
+
+    <select id="queryChinaDayList" resultType="com.bigdata.bigdataserver.vo.ChinaDayList">
+        select id, date,
+               today_confirm todayConfirm, today_suspect todaySuspect, today_heal todayHeal, today_dead todayDead, today_severe todaySevere, today_storeConfirm todayStoreConfirm, today_input todayInput,
+               total_confirm totalConfirm, total_suspect totalSuspect, total_heal totalHeal, total_dead totalDead, total_severe totalSevere, total_input totalInput, total_storeConfirm totalStoreConfirm
+        from chinadaylist
+    </select>
+</mapper>

@@ -1,0 +1,39 @@
+.trendBox{
+            width: 720px;
+            margin: 0 auto;
+        }
+        .trendContent>li{
+            list-style: none;
+            display: none;
+        }
+        .trendContent>.trendShow{
+            display: inline-block;
+			width: 100%;
+        }
+        .trendBottom .trendLeft trendActive{
+            background: #10AEB5;
+            color: #f5f6f7;
+        }
+        .trendBottom{
+            margin-top: 10px;
+        }
+        .trendLeft{
+            list-style: none;
+            width: 240px;
+            height: 50px;
+            background:#f5f6f7;
+            border-radius: 5px;
+            text-align: center;
+            float: left;
+            color: black;
+            font-size: 10px;
+        }
+        .trendLeft span{
+            display: block;
+            margin: 5px auto;
+            text-align: center;
+        }
+        .trendActive{
+            background: #10AEB5;
+            color: #f5f6f7;
+        }

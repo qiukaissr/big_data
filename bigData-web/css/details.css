@@ -1,0 +1,52 @@
+.main .details{
+	padding: 0 10px;
+	height: 240px;
+}
+
+.main .details .title{
+	font-size: 14px;
+	font-weight: 700;
+	color: #000;
+	margin: 4px 0 1px;
+}
+
+.main .details .time{
+	font-size:12px;
+	font-weight: 400;
+	color: #999;
+	margin-bottom: 8px;
+}
+.main .details .info{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.main .details .info li{
+	height: 100px;
+	width: 150px;
+	margin-right:20px ;
+}
+
+.main .details .info li h5{
+	font-size: 16px;
+	color: #333;
+	font-weight: normal;
+	text-align: center;
+}
+
+.main .details .info li p{
+	font-size: 8px;
+	font-weight: 700;
+	margin: 5px 5px;
+	text-align: center;
+}
+
+.main .details .info li span{
+	display: flex;
+	justify-content: center;
+	font-size: 8px;
+}
+
+.main .details .info li span em{
+	color: #999;
+}

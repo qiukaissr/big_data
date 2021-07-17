@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bigdata.bigdataserver.dao.JwsrTopDao">
+    <insert id="insert" parameterType="com.bigdata.bigdataserver.vo.JwsrTop">
+        insert into jwsrtop (jwsrNum, name, ename)
+        values (#{jwsrNum}, #{name}, #{ename})
+    </insert>
+
+    <select id="queryJwsrTop" resultType="com.bigdata.bigdataserver.vo.JwsrTop">
+        select * from jwsrtop
+    </select>
+
+</mapper>
